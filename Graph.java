@@ -10,7 +10,7 @@ public class Graph {
 
     public Graph()
     {
-        verticesNumber = 5;
+        verticesNumber = 6;
         matrix = new int[verticesNumber][verticesNumber];
     }
 
@@ -75,15 +75,22 @@ public class Graph {
         return Arrays.copyOf(vert, total);
     }
 
-    //public int geNumberOfVertices
+    public int geNumberOfVertices(){
+        return verticesNumber;
+    }
 
-    //public int[] getPath(int s, int t)
+    //public int[] getPath(int s, int t){}
 
-    //public int getWeight(int v, int w)
+    public int getWeight(int v, int w){
+        return matrix[v][w];
+    }
 
-    //public void removeEdge(int v, int w);
+    public void removeEdge(int v, int w){
+        matrix[v][w] = 0;
+        matrix[w][v] = 0;
+    }
 
-    //String toString()
+    //String toString(){}
 
     /**
      * Calculates the shortest paths from a given vertex to all vertices.
