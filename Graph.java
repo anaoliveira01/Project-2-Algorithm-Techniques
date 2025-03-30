@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class Graph {
 
-    int verticesNumber;
-    int[][] matrix; //adjacency matrix
+    private int verticesNumber;
+    private int[][] matrix; //adjacency matrix
 
     public Graph()
     {
@@ -52,7 +52,7 @@ public class Graph {
         in.close();
     }
 
-    public void addEdge(int v, int w)
+    public void addEdge(int v, int w, int weight)
     {
         matrix[v][w] = 1;
         matrix[w][v] = 1;
@@ -75,13 +75,13 @@ public class Graph {
         return Arrays.copyOf(vert, total);
     }
 
-    //int getNumberOfVertices()
+    //public int geNumberOfVertices
 
-    //int[] getPath(int s, int t)
+    //public int[] getPath(int s, int t)
 
-    //int getWeight(int v, int w)
+    //public int getWeight(int v, int w)
 
-    //void removeEdge(int v, int w);
+    //public void removeEdge(int v, int w);
 
     //String toString()
 
@@ -91,7 +91,7 @@ public class Graph {
      * @param d distances (d[i] contains the shortest distance from v)
      * @param v given vertex
      */
-    public void allShortestPaths(int[] p, int[]d, int v) {
+    private void allShortestPaths(int[] p, int[]d, int v) {
         boolean[] visited = new boolean[verticesNumber];
         for (int i=0; i<verticesNumber; i++) {
             visited[i] = false; //not yet visited
@@ -129,7 +129,7 @@ public class Graph {
 	* Return shortest path stored in array; s is the first and t is the last
 	*/
 
-    public int[] getPath(int s, int t, int[] p)
+    private int[] getPath(int s, int t, int[] p)
     {
         int[] shortestPath = new int[p.length];
         int current = t;
@@ -154,7 +154,7 @@ public class Graph {
 
     /* Returns smallest element in given array d, out of those that have not
      * been visited (see allShortestPaths method).
-     * @param visited visited elements
+     * @param visited elements
      * @param d array of distances
      * @return index of smallest element in d
      */
